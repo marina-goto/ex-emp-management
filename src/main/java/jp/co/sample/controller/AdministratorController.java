@@ -60,7 +60,7 @@ public class AdministratorController {
 	public String login(LoginForm form,Model model) {
 		Administrator administrator=administratorService.login(form.getMailAddress(), form.getPassword());
 		
-		if(administratorService.login(form.getMailAddress(), form.getPassword())==null) {
+		if(administrator==null) {
 			model.addAttribute("errormessage", "メールアドレスまたはパスワードが不正です。");
 			return "administrator/login";
 		}else {
