@@ -18,4 +18,9 @@ public class AdministratorService {
 		administratorRepository.insert(administrator);
 	}
 	//レポジトリのinsertをそのまま返しています。
+	
+	public Administrator login(String mailAddress,String password) {
+		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
+	}
+	//レポジトリのメールアドレスとパスワードで探した管理者情報を返す。
 }
